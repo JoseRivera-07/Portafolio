@@ -1,83 +1,395 @@
-*{
-    margin: 0px;
-    padding: 0px;
-}
+/* Color de fondo */
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 240, 223);
+    text-align: center;
+    justify-content: center;
 }
-body{
-    display: block;    
-    width: auto;
+
+/* Estilos de la barra de navegación */
+
+.nv{
+    left: 1%;
+    border-radius: 15px;
+    width: 98%;
+    height: 70px;
+    position: relative;
     display: flex;
-    flex-direction: column;        /* para que el nav quede debajo */
-    justify-content: center;       /* centra verticalmente */
-    align-items: center;           /* centra horizontalmente */
-
-    height: 100vh;                 /* ocupa toda la pantalla */
-    background: #9c4d1e;
-    font-family: Arial, sans-serif;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 500px;  
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 
 }
-nav {
-    background-color: #333;
-    padding: 10px;
-    border-radius: 20px;
-}
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* Estilos de los elementos dentro de la barra de navegación */
+.elements{
+    position: relative;
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;  
 }
 
-nav ul li {
-    margin-right: 20px;
+/* Estilos de los items dentro de la barra de navegación */
+.item{
+    left: 15%;
+    display: flex;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-nav ul li a {
+.cont-img{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: rgb(224, 195, 161);
+}
+img{
+    border-radius: 15px;
+    width: 60px;
+    height: 60px;
+}
+a{
     text-decoration: none;
-    color: white;
+    color: black;
     font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: 150px ;
+}
+h2{
+    text-align: justify;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+}
+.bienvenida{
+    position: absolute;
+    width: 96%;
+    left: 2%;
+    margin: auto;
+    height: 400px;
+    border-radius: 15px;    
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    top: 100px ;
+}
+.iniciales{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px ;
+    
+}
+.circle1{
+    position: inherit;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(224, 195, 161);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px ;
+    margin-bottom: 10px ;
+    left: 5%;
+    top: 5px;
+}
+.circle2{
+    left: 90%;
+    position: inherit;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: rgb(255, 240, 223);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.circle3{
+    top: 75%;
+    left: 80%;
+    position: inherit;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: rgb(224, 195, 161);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.circle4{
+    top: 80%;
+    left: 5%;
+    position: inherit;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(255, 240, 223);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-nav ul li a:hover {
-    color: #7e7450; /* color al pasar el mouse */
+/* Estilos de los items al pasar el cursor sobre ellos */
+.item:hover .cont-img{
+    transform: scale(1.1);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
 }
-table {
-    margin-top: 30px;
-    width: 500px;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
+/* Estilos de los enlaces al pasar el cursor sobre ellos */
+a:hover{    
+    color: rgb(128, 0, 128);
+}
+/* Estilos de la sección de bienvenida */
+.bienvenida:hover{  
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+} 
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 600px) {
+    .nv{
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+    .elements{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .bienvenida{
+        top: 200px ;
+    }
 }
 
-th, td {
-    padding: 12px 15px;
-    text-align: left;
+
+
+/* 
+
+ESTILOS DE PROYECTOS
+(description)
+
+*/
+.description{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.bienvenida-proyectos{
+    position: absolute;
+    width: 96%;
+    left: 2%;
+    margin: auto;
+    height: 300px;
+    border-radius: 15px;    
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    top: 100px ;
+}
+.circle5{
+    position: inherit;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: rgb(224, 195, 161);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px ;
+    margin-bottom: 10px ;
+    left: 1%;
+    top: 1px;
+}
+.circle6{
+    left: 90%;
+    position: inherit;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(255, 240, 223);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.circle7{
+    top: 75%;
+    left: 80%;
+    position: inherit;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(224, 195, 161);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.circle8{
+    top: 80%;
+    left: 5%;
+    position: inherit;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(255, 240, 223);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.mvp{
+    margin-top: 8% ;
+}
+/* Estilos de la sección de bienvenida de proyectos al pasar el cursor sobre ellos */
+.bienvenida-proyectos:hover{    
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+}   
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 600px) {
+    .bienvenida-proyectos{
+        top: 200px ;
+    }
+}  
+/* Layout del carrusel (reemplaza .galeria original por .carousel si quieres) */
+.carousel{
+  position: absolute;
+  width: 90%;
+  left: 2%;
+  top: 430px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(255, 240, 223);
 }
 
-th {
-    background: #333;
-    color: white;
-    font-size: 18px;
+/* viewport: recorta el track */
+.carousel__viewport{
+  margin-top: 0%;
+  overflow: hidden;
+  width: calc(100% - 120px); /* deja espacio para botones */
 }
 
-tr:nth-child(even) {
-    background: #f2f2f2;
+/* track: fila horizontal de cards */
+.carousel__track{
+  display: flex;
+  gap: 20px;
+  transition: transform 450ms cubic-bezier(.22,.9,.3,1);
+  will-change: transform;
+  align-items: center;
+  padding: 10px 0;
 }
 
-tr:hover {
-    background: #e0d9c9;
+/* reutiliza tu .card adaptándola al carrusel */
+.card{
+  flex: 0 0 auto; /* evita que se reduzcan */
+  width: 200px;
+  height: 280px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 240, 223);
 }
-header {
-    margin-bottom: 20px;
+
+/* imagen dentro de la card */
+.cont-imge{
+  width: 90%;
+  height: 70%;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
 }
-header h1 {
-    font-size: 100px;
-    color: white;
+
+/* flechas */
+.carousel__btn{
+  border: none;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .15s;
 }
-#tit{
-    font-size: 50px;
+.carousel__btn:active { transform: scale(.95); }
+.carousel__btn--prev { margin-right: 6px; }
+.carousel__btn--next { margin-left: 6px; }
+
+/* indicadores (dots) */
+.carousel__dots{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -18px;
+  display: flex;
+  gap: 8px;
 }
+.carousel__dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.carousel__dot.is-active{
+  background: rgba(0,0,0,0.7);
+}
+
+/* responsive: menos cards en pantallas pequeñas */
+@media (max-width: 900px){
+  .carousel{ top: 360px; padding: 12px; }
+  .card{ width: 160px; height: 240px; }
+  .carousel__viewport{ width: calc(100% - 100px); }
+}
+@media (max-width: 520px){
+  .carousel{ flex-direction: column; gap: 12px; height: auto; top: 320px; }
+  .carousel__viewport{ width: 100%; }
+  .carousel__btn{ display: inline-flex; }
+  .carousel__dots{ bottom: -12px; }
+}
+
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 600px) {
+    .galeria{
+        top: 750px ;
+        height: auto;
+    }
+}
+/* ESTILOS DE PROYECTOS FIN */
+
+

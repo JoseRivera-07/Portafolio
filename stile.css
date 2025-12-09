@@ -1,0 +1,139 @@
+/* Fondo general */
+body{
+    background-color: rgb(255, 240, 223);
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Sección de contacto */
+.contact-section{
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-section h2{
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Contenedor */
+.contact-container{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas */
+.contact-card{
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: .3s;
+}
+
+.contact-card i{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+/* Hover */
+.contact-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Estilos de la barra de navegación */
+
+.nv{
+    margin-top: 1%;
+    left: 1%;
+    border-radius: 15px;
+    width: 98%;
+    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 500px;  
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Estilos de los elementos dentro de la barra de navegación */
+.elements{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;  
+}
+
+/* Estilos de los items dentro de la barra de navegación */
+.item{
+    left: 15%;
+    display: flex;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.cont-img{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: rgb(224, 195, 161);
+    text-align: center;
+}
+img{
+    border-radius: 15px;
+    width: 60px;
+    height: 60px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.iniciales{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px ;
+    
+}
+/* Estilos de los items al pasar el cursor sobre ellos */
+.item:hover .cont-img{
+    transform: scale(1.1);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+}
+/* Estilos de los enlaces al pasar el cursor sobre ellos */
+a:hover{    
+    color: rgb(128, 0, 128);
+}
+/* Estilos de la sección de bienvenida */
+.bienvenida:hover{  
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsivo */
+@media (max-width: 600px){
+    .contact-card{
+        width: 130px;
+        height: 130px;
+    }
+}

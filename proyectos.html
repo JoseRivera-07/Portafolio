@@ -4,47 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="portafolio.css">
-    <title>Proyectos</title>
+    <title>Projects</title>
 </head>
 <body>
+    <nav class="nv">
+        <div class="cont-img">
+            <p class="iniciales">JR</p>
+        </div>
+        <ul class="elements">
+            <li class="item"><a href="index.html">Home</a></li>
+            <li class="item"><a href="proyectos.html">Projects</a></li>
+            <li class="item"><a href="personal.html">About Me</a></li>
+            <li class="item"><a href="contacto.html">Contact</a></li>
+        </ul>
+    </nav>
 
-    <header>
-        <h1>Mis proyectos</h1>
-    </header>
+    <section class="bienvenida-proyectos">
+        <div class="circle5"></div>
+        <div class="circle6"></div>
+        <div class="circle7"></div>
+        <div class="circle8"></div>
+        <h1 class="mvp">My Projects</h1>
+        <h2 class="description">Here are some of the projects I've worked on recently. Feel free to explore and reach out if you'd like to collaborate!</h2>
+    </section>
+    <!-- <section class="gallery">
+        <div class="project-card">
+            <img src="project1.jpg" alt="Project 1">
+            <h3>Project Title 1</h3>
+            <p>Brief description of Project 1.</p>
+        </div>
+        <div class="project-card">
+            <img src="project2.jpg" alt="Project 2">
+            <h3>Project Title 2</h3>
+            <p>Brief description of Project 2.</p>
+        </div>
+        <div class="project-card">
+            <img src="project3.jpg" alt="Project 3">
+            <h3>Project Title 3</h3>
+            <p>Brief description of Project 3.</p>
+        </div>
+    </section>-->
+    <section class="carousel">
+        <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
 
-    <table>
-    <tr>
-        <th>Nombre</th>
-        <th>Enlace</th>
-    </tr>
-    <tr>
-        <td>SolutionBash</td>
-        <td><a href="https://github.com/JoseRivera-07/solutionsBash">https://github.com/JoseRivera-07/solutionsBash</a></td>
-    </tr>
-    <tr>
-        <td>Domicilio python</td>
-        <td><a href="https://github.com/JoseRivera-07/domicilio-python">https://github.com/JoseRivera-07/domicilio-python</a></td>
-    </tr>
-    <tr>
-        <td>Genero y Edad</td>
-        <td><a href="https://github.com/JoseRivera-07/generoEdad">https://github.com/JoseRivera-07/generoEdad</a></td>
-    </tr>
-    <tr>
-        <td>Eje. Python lvl1</td>
-        <td><a href="https://github.com/JoseRivera-07/ejercicios-python-lvl1">https://github.com/JoseRivera-07/ejercicios-python-lvl1</a></td>
-    </tr>
-    <tr>
-        <td>Condicionales y loops</td>
-        <td><a href="https://github.com/JoseRivera-07/conditionals-loops">https://github.com/JoseRivera-07/conditionals-loops</a></td>
-    </tr>
-    <tr>
-        <td>Eco Ride: proyecto bicicleta</td>
-        <td><a href="https://github.com/JoseRivera-07/ecoride">https://github.com/JoseRivera-07/ecoride</a></td>
-    </tr>
-    <tr>
-        <td>Crudazo (proyecto en equipo)</td>
-        <td><a href="https://github.com/Zain-wave/Crudzaso_Games">https://github.com/Zain-wave/Crudzaso_Games</a></td>
-    </tr>
-</table>
+        <div class="carousel__viewport">
+            <div class="carousel__track">
+            <!-- Repite/usa tus .card tal cual -->
+            <div class="card">
+                <div class="cont-imge" style="background-image: url('img1.jpg');"></div>
+            </div>
+            <div class="card">
+                <div class="cont-imge" style="background-image: url('img2.jpg');"></div>
+            </div>
+            <div class="card">
+                <div class="cont-imge" style="background-image: url('img3.jpg');"></div>
+            </div>
+            <div class="card">
+                <div class="cont-imge" style="background-image: url('img4.jpg');"></div>
+            </div>
+            <div class="card">
+                <div class="cont-imge" style="background-image: url('img5.jpg');"></div>
+            </div>
+            <div class="card">
+                <div class="cont-imge" style="background-image: url('img6.jpg');"></div>
+            </div>
+            <div class="card">
+                <div class="cont-imge" style="background-image: url('img7.jpg');"></div>
+            </div>
+            </div>
+        </div>
+
+        <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
+
+        <div class="carousel__dots" role="tablist"></div>
+    </section>
+    <script>
+        (function(){
+        const track = document.querySelector('.carousel__track');
+        const cards = Array.from(track.children);
+        const prevBtn = document.querySelector('.carousel__btn--prev');
+        const nextBtn = document.querySelector('.carousel__btn--next');
+        const dotsContainer = document.querySelector('.carousel__dots');
+
+        if(!track) return;
+
+        let index = 0;
+        const cardWidth = cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 20);
+        // Crear dots (una por "página" visible). Para simplificar: cada "slide" mueve 1 card.
+        cards.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'carousel__dot';
+            dot.setAttribute('aria-label', 'Ir a slide ' + (i+1));
+            dotsContainer.appendChild(dot);
+            dot.addEventListener('click', () => {
+            index = i;
+            update();
+            resetAutoplay();
+            });
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        function update(){
+            // limita index entre 0 y max
+            index = Math.max(0, Math.min(index, cards.length - 1));
+            const x = -index * cardWidth;
+            track.style.transform = `translateX(${x}px)`;
+            dots.forEach(d => d.classList.remove('is-active'));
+            if(dots[index]) dots[index].classList.add('is-active');
+        }
+
+        prevBtn.addEventListener('click', () => { index--; update(); resetAutoplay(); });
+        nextBtn.addEventListener('click', () => { index++; update(); resetAutoplay(); });
+
+        // Drag / touch support
+        let isDown = false, startX = 0, currentTranslate = 0;
+        track.addEventListener('pointerdown', (e) => {
+            isDown = true;
+            startX = e.clientX;
+            track.style.transition = 'none';
+            track.setPointerCapture(e.pointerId);
+        });
+        track.addEventListener('pointermove', (e) => {
+            if(!isDown) return;
+            const delta = e.clientX - startX;
+            track.style.transform = `translateX(${ -index * cardWidth + delta }px)`;
+        });
+        track.addEventListener('pointerup', (e) => {
+            if(!isDown) return;
+            isDown = false;
+            track.style.transition = '';
+            const delta = e.clientX - startX;
+            if (delta < -cardWidth/4) index++;
+            else if (delta > cardWidth/4) index--;
+            update();
+        });
+        track.addEventListener('pointercancel', () => { isDown = false; update(); });
+
+        // teclado (opcional)
+        window.addEventListener('keydown', (e) => {
+            if(e.key === 'ArrowRight') { index++; update(); resetAutoplay(); }
+            if(e.key === 'ArrowLeft') { index--; update(); resetAutoplay(); }
+        });
+
+        // autoplay
+        let autoplayId;
+        function startAutoplay(){
+            autoplayId = setInterval(()=> {
+            index = (index + 1) % cards.length;
+            update();
+            }, 3500);
+        }
+        function resetAutoplay(){
+            clearInterval(autoplayId);
+            startAutoplay();
+        }
+        startAutoplay();
+        // marca inicial
+        update();
+
+        // recalcular dimensiones si se redimensiona
+        window.addEventListener('resize', () => {
+            // espera al repaint breve para recalcular
+            requestAnimationFrame(() => {
+            // recalcula ancho
+            const newCardWidth = cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 20);
+            // solo actualizar si cambió (evita saltos)
+            if(Math.abs(newCardWidth - cardWidth) > 0.1){
+                // for simplicity, reload to recalc values (puedes mejorar guardando variable en scope)
+                location.reload();
+            } else {
+                update();
+            }
+            });
+        });
+
+        })();
+    </script>
+
 </body>
 </html>
