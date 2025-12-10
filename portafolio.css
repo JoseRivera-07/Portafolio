@@ -275,40 +275,29 @@ ESTILOS DE PROYECTOS
     }
 }  
 /* Layout del carrusel (reemplaza .galeria original por .carousel si quieres) */
-.carousel{
-  position: absolute;
-  width: 90%;
-  left: 2%;
-  top: 430px;
-  border-radius: 15px;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-  padding: 18px 40px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: rgb(255, 240, 223);
+.galeria {
+    width: 95%;
+    min-height: 500px;
+    margin-top: 18%;
+    margin-left: 1.5%;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+
+    /* NUEVO: organización en 5 columnas */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+
+    padding: 20px; /* opcional para separar bordes */
 }
 
-/* viewport: recorta el track */
-.carousel__viewport{
-  margin-top: 0%;
-  overflow: hidden;
-  width: calc(100% - 120px); /* deja espacio para botones */
-}
 
-/* track: fila horizontal de cards */
-.carousel__track{
-  display: flex;
-  gap: 20px;
-  transition: transform 450ms cubic-bezier(.22,.9,.3,1);
-  will-change: transform;
-  align-items: center;
-  padding: 10px 0;
-}
 
 /* reutiliza tu .card adaptándola al carrusel */
 .card{
-  flex: 0 0 auto; /* evita que se reduzcan */
+  left: 1.5%;  
   width: 300px;
   height: 380px;
   border-radius: 15px;
@@ -317,6 +306,9 @@ ESTILOS DE PROYECTOS
   align-items: center;
   justify-content: center;
   background-color: rgb(255, 240, 223);
+  position: relative;
+  top: 1.5%;
+
 }
 
 /* imagen dentro de la card */
@@ -334,45 +326,6 @@ ESTILOS DE PROYECTOS
 .title-p{
     font-size: 30px;
     color:White;
-}
-
-/* flechas */
-.carousel__btn{
-  border: none;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform .15s;
-}
-.carousel__btn:active { transform: scale(.95); }
-.carousel__btn--prev { margin-right: 6px; }
-.carousel__btn--next { margin-left: 6px; }
-
-/* indicadores (dots) */
-.carousel__dots{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -18px;
-  display: flex;
-  gap: 8px;
-}
-.carousel__dot{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.2);
-  cursor: pointer;
-}
-.carousel__dot.is-active{
-  background: rgba(0,0,0,0.7);
 }
 
 /* responsive: menos cards en pantallas pequeñas */
@@ -404,4 +357,6 @@ ESTILOS DE PROYECTOS
     position: relative;
     left: 10%;
 }
+
+
 
