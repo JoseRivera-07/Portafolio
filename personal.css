@@ -5,40 +5,97 @@ body{
     justify-content: center;
 }
 
-/* Estilos de la barra de navegación */
-
-.nv{
-    left: 1%;
-    border-radius: 15px;
-    width: 98%;
-    height: 70px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 500px;  
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-
-}
-
-/* Estilos de los elementos dentro de la barra de navegación */
-.elements{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 30px;  
-}
-
-/* Estilos de los items dentro de la barra de navegación */
-.item{
-    left: 15%;
-    display: flex;
-    position: relative;
+/* Color de fondo */
+body{
+    background-color: rgb(255, 240, 223);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
 }
+
+/* ---------- Barra de navegación ---------- */
+.nv{
+    width: 96%;
+    margin: 16px auto;
+    border-radius: 15px;
+    height: auto;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 18px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    background: rgb(255, 240, 223);
+    flex-wrap: wrap;
+}
+
+/* contenedor de elementos (links / iconos) */
+.elements{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* items individuales */
+.item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* imagen dentro del item */
+.cont-img{
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background-color: rgb(224, 195, 161);
+    overflow: hidden;
+}
+.cont-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* enlaces */
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+a:hover{ color: rgb(128, 0, 128); }
+
+/* ---------- Encabezados / texto ---------- */
+h1{
+    font-weight: 800;
+    font-size: 40px;
+    margin: 24px auto 8px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.12);
+}
+h2{
+    font-size: 16px;
+    margin: 12px 20px 24px;
+    text-align: justify;
+    line-height: 1.45;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.08);
+}
+
+
+
+
 .cont-img{
     position: relative;
     width: 60px;
